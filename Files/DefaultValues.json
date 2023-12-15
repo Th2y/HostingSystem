@@ -1,4 +1,6 @@
 {
+    "DaysToDescount" : 10,
+    "PercentToDescount" : 10,
     "DailyRatePerPerson" : 50.0,
     "DailyRatePerSuite" : 100.0,
     "AgeLimitToFree" : 18,

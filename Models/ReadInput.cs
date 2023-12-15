@@ -32,7 +32,7 @@ public static class ReadInput
                 {
                     Console.WriteLine(errorPrompt);
                 }
-                else if(value > max)
+                else if(max > 0 && value > max)
                 {
                     Console.WriteLine("Insira um valor até " + max);
                 }

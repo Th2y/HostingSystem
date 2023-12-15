@@ -1,6 +1,6 @@
 ﻿using HostingSystem.Models;
 
-var (DailyRatePerPerson, DailyRatePerSuite, AgeLimitToFree, MaxSuites, MaxPeoplePerSuite) = 
+var (DaysToDescount, PercentToDescount, DailyRatePerPerson, DailyRatePerSuite, AgeLimitToFree, MaxSuites, MaxPeoplePerSuite) = 
     DefaultValuesConfig.ReadDailyRateConfiguration("Files/DefaultValues.json");
 
 string principalGuestName;
@@ -69,7 +69,7 @@ for (int i = 0; i < suitesToReservation; i++)
 }
 
 Reservation reservation = 
-    new(DailyRatePerPerson, DailyRatePerSuite, principalGuest, suites, checkInDate, checkOutDate);
+    new(DaysToDescount, PercentToDescount, DailyRatePerPerson, DailyRatePerSuite, principalGuest, suites, checkInDate, checkOutDate);
 
 Console.WriteLine($"O valor total da reserva é: {reservation.CalculateValue()}");
 Console.WriteLine("Reserva confirmada com sucesso!");

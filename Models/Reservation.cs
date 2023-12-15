@@ -1,8 +1,11 @@
 namespace HostingSystem.Models;
 public class Reservation(
+    int daysToDescount, int percentToDescount,
     decimal dailyRatePerPerson, decimal dailyRatePerSuite, 
     Person principalGuest, List<Suite> suites, DateTime checkIn, DateTime checkOut)
 {
+    public int DaysToDescount { get; private set; } = daysToDescount;
+    public int PercentToDescount { get; private set; } = percentToDescount;
     public decimal DailyRatePerPerson { get; private set; } = dailyRatePerPerson;
     public decimal DailyRatePerSuite { get; private set; } = dailyRatePerSuite;
     public Person PrincipalGuest { get; set; } = principalGuest;
@@ -23,7 +26,7 @@ public class Reservation(
         decimal guestsValue = payingGuests * DailyRatePerPerson;
 
         decimal totalValue = (suitesValue + guestsValue) * totalDays;
-        if(totalDays > 10) totalValue -= totalValue * 0.1m;
+        if(totalDays > DaysToDescount) totalValue -= totalValue * PercentToDescount / 100;
 
         return totalValue;
     }
