@@ -1,0 +1,7 @@
+{
+    "DailyRatePerPerson" : 50.0,
+    "DailyRatePerSuite" : 100.0,
+    "AgeLimitToFree" : 18,
+    "MaxSuites" : 10,
+    "MaxPeoplePerSuite" : 3
+}

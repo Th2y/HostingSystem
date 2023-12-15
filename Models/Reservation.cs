@@ -1,5 +1,7 @@
 namespace HostingSystem.Models;
-public class Reservation(decimal dailyRatePerPerson, decimal dailyRatePerSuite, Person principalGuest, List<Suite> suites, DateTime checkIn, DateTime checkOut)
+public class Reservation(
+    decimal dailyRatePerPerson, decimal dailyRatePerSuite, 
+    Person principalGuest, List<Suite> suites, DateTime checkIn, DateTime checkOut)
 {
     public decimal DailyRatePerPerson { get; private set; } = dailyRatePerPerson;
     public decimal DailyRatePerSuite { get; private set; } = dailyRatePerSuite;
